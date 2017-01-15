@@ -4,6 +4,7 @@ var fruitObj =function(){
 	this.y = [];
 	this.l = [];//定义果实的大小
 	this.speed = [];
+	this.aneNum = [];
 	this.fruitType = [];//果实颜色类型
 	this.orange = new Image();
 	this.blue = new Image();
@@ -14,6 +15,7 @@ fruitObj.prototype.init = function(){
 		this.alive[i] = false;
 		this.x[i] = 0;
 		this.y[i] = 0;
+		this.aneNum[i] = 0;
 		this.speed[i] = Math.random()*0.017 +0.003;//定义一个速度[0.03 0.02)
 		this.born(i);
 		this.fruitType[i] = "";
@@ -30,14 +32,18 @@ fruitObj.prototype.draw = function(){
 			}else{
 				var pic = this.orange;
 			}
-			if(this.l[i] < 14){
-			this.l[i] += this.speed[i]*deltaTime;
+			if(this.l[i] < 14){//grow
+				var NO = this.aneNum[i];
+				this.x[i] = anemone.headx[NO];
+				this.y[i] = anemone.heady[NO];
+				this.l[i] += this.speed[i]*deltaTime;
+				//con2.drawImage(pic,this.x[i]-this.l[i]*0.5,this.y[i]-this.l[i]*0.5,this.l[i],this.l[i]);	
 			}
 			else{
 				this.y[i] -= this.speed[i]*7*deltaTime;
 			}
-			//console.log(pic);
 			con2.drawImage(pic,this.x[i]-this.l[i]*0.5,this.y[i]-this.l[i]*0.5,this.l[i],this.l[i]);	
+			//console.log(pic);
 			if(this.y[i] < 10){
 				this.alive[i] = false;
 			}  
@@ -46,9 +52,9 @@ fruitObj.prototype.draw = function(){
 }
 fruitObj.prototype.born = function(i){
 	//这里缺少果实重复判断
-	anemoneID = Math.floor(Math.random()*anemone.num);
-	this.x[i] = anemone.x[anemoneID];
-	this.y[i] =	canHeight - anemone.y[anemoneID];
+	this.aneNum[i] = Math.floor(Math.random()*anemone.num);
+	//this.x[i] = anemone.headx[anemoneID];
+	//this.y[i] =	anemone.heady[anemoneID];
 	this.l[i] = 0;
 	this.alive[i] = true;
 	var ran = Math.random();

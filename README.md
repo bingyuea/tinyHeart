@@ -56,6 +56,7 @@
 ###8.海葵摆动  
 ##question
 1. offSetX || layerX
+	offSetX 和 layerX都是取得鼠标坐标点，相对于父框边框  
 ```
 if(e.offSetX || e.layerX){
 			mx = e.offSetX == undefined ? e.layerX : e.offSetX;
@@ -63,5 +64,6 @@ if(e.offSetX || e.layerX){
 			//console.log(mx);
 }
 ```
-offSetX 和 layerX都是取得鼠标坐标点，相对于父框边框
+2. lastTime = Date.now();  
+	可以直接得出当前时间并转化为毫秒 == var now = new Date();console.log(now.getTime())
  

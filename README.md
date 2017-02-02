@@ -54,5 +54,14 @@
 ###7.游戏特效  
      吃食特效  
 ###8.海葵摆动  
-
+##question
+1. offSetX || layerX
+```
+if(e.offSetX || e.layerX){
+			mx = e.offSetX == undefined ? e.layerX : e.offSetX;
+			my = e.offSetY == undefined ? e.layerY : e.offsetY;
+			//console.log(mx);
+}
+```
+offSetX 和 layerX都是取得鼠标坐标点，相对于父框边框
  

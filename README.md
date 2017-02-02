@@ -1,3 +1,6 @@
+#效果图
+![效果图](https://github.com/bingyuea/tinyHeart/blob/master/tinyHearts.gif)
+==
 ##一阶段（建立游戏基本框架）  
 ###1.建立两个画布，重合在一起  
      document.getElementById("canvas").getContext("2d");  

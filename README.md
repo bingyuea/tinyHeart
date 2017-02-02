@@ -56,7 +56,7 @@
 ###8.海葵摆动  
 ##question
 1. offSetX || layerX
-	offSetX 和 layerX都是取得鼠标坐标点，相对于父框边框  
+	1. offSetX 和 layerX都是取得鼠标坐标点，相对于父框边框  
 ```
 if(e.offSetX || e.layerX){
 			mx = e.offSetX == undefined ? e.layerX : e.offSetX;

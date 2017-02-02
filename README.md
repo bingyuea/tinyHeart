@@ -67,5 +67,15 @@
 2. lastTime = Date.now();  
 	可以直接得出当前时间并转化为毫秒 == var now = new Date();console.log(now.getTime())  
 3. requestAnimationFrame(请求动画帧)
-			
+
+
+
+
+
+
+
+
+
+
+
  
